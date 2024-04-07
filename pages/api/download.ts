@@ -6,7 +6,7 @@ type Data = {
   name: string;
 };
 
-Ffmpeg.setFfmpegPath("C:/ffmpeg.exe");
+Ffmpeg.setFfmpegPath("ffmpeg");
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   const id = req.query.id;

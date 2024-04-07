@@ -24,9 +24,12 @@ export default function Home() {
   const router = useRouter();
   const [url, setUrl] = useState("https://www.youtube.com/watch?v=z0Wq1ZjdKwY");
   useEffect(() => {
-    navigator.clipboard.readText().then((text) => {
-      if (variantDefaults.some((variant) => text.includes(variant))) setUrl(text);
-    });
+    navigator.clipboard
+      .readText()
+      .then((text) => {
+        if (variantDefaults.some((variant) => text.includes(variant))) setUrl(text);
+      })
+      .catch((e) => console.log(e));
   }, []);
   const navig = () => {
     try {
